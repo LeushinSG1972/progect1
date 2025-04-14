@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Wireframe Cubes Over Text</title>
+  <style>
+    body {  font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #000;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #aadddd;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #a1d1d1;
+            font-size: 24px;
+            margin-top: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #a9d9d9;
+            font-size: 20px;
+        }
+        .intro {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #2980b9;
+        }
+        .highlight {
+            background-color: #fffde7;
+            padding: 2px 5px;
+            font-weight: bold;
+        }
+        .benefit-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .benefit-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+        .benefit-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        .module {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .cta {
+            background-color: #e3f2fd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 30px 0;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .guarantee {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    #text-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      z-index: 1;
+      background-color: #f0f0f0;
+    }
+   
+    p {
+      font-size: 1.5em;
+      color: #444;
+      max-width: 900px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    #canvas-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="text-container">
+    <h1>Почему «Правильный сон» — это лучшее вложение в ваше здоровье и продуктивность?</h1>
+
+    <div class="intro">
+        Сон — это не просто время, когда тело отдыхает. Это важнейший процесс, от которого зависит ваше здоровье, энергия, настроение и даже успех в жизни. Но что, если вы спите неправильно? Хроническая усталость, снижение концентрации, раздражительность, лишний вес, слабый иммунитет — всё это последствия плохого сна.
+    </div>
+
+    <p>Курс <strong>«Правильный сон»</strong> — это ваш шанс изменить жизнь к лучшему. Мы собрали научно обоснованные методики, которые помогут вам высыпаться за меньшее время, просыпаться бодрым и сохранять энергию весь день.</p>
+
+    <h2>Почему сон так важен?</h2>
+
+    <h3>1. Восстановление организма</h3>
+    <p>Во время сна тело:</p>
+    <ul>
+        <li><strong>Восстанавливает мышцы</strong> (особенно важно для спортсменов)</li>
+        <li><strong>Укрепляет иммунитет</strong> (недосып = частые болезни)</li>
+        <li><strong>Регулирует гормоны</strong> (включая те, что отвечают за голод и стресс)</li>
+    </ul>
+
+    <h3>2. Работа мозга и память</h3>
+    <ul>
+        <li>Во сне мозг <strong>обрабатывает информацию</strong> и переносит её в долговременную память</li>
+        <li>Недостаток сна снижает <strong>креативность, скорость реакции и способность принимать решения</strong></li>
+    </ul>
+
+    <h3>3. Эмоциональное состояние</h3>
+    <ul>
+        <li>Недосып ведёт к <strong>раздражительности, тревожности и депрессии</strong></li>
+        <li>Качественный сон делает вас <strong>устойчивее к стрессу</strong></li>
+    </ul>
+
+    <h3>4. Внешность и молодость</h3>
+    <ul>
+        <li><strong>Коллаген вырабатывается во сне</strong> — чем хуже спите, тем быстрее стареет кожа</li>
+        <li>Мешки под глазами, тусклый цвет лица — всё это последствия плохого сна</li>
+    </ul>
+
+    <h2>Почему обычные советы не работают?</h2>
+
+    <p>Вы наверняка слышали:</p>
+    <ul>
+        <li>«Ложитесь до 23:00»</li>
+        <li>«Пейте меньше кофе»</li>
+        <li>«Спите 8 часов»</li>
+    </ul>
+
+    <p>Но почему тогда миллионы людей всё равно не высыпаются?</p>
+
+    <p><strong>Потому что универсальных решений нет!</strong></p>
+    <ul>
+        <li>Кому-то действительно нужно 8 часов, а кому-то хватает 6</li>
+        <li>Кто-то легко засыпает в шуме, а кого-то будит малейший звук</li>
+        <li>Одним помогает медитация, другим — только чёткий режим</li>
+    </ul>
+
+    <p><strong>Курс «Правильный сон»</strong> учитывает <strong>ваши индивидуальные особенности</strong> и даёт персонализированные рекомендации.</p>
+
+    <h2>Что вы получите после курса?</h2>
+
+    <ul class="benefit-list">
+        <li><strong>Вы будете засыпать за 5–10 минут</strong><br>Больше никаких «ворочаюсь 2 часа» — только быстрое погружение в сон</li>
+        <li><strong>Сократите время сна без вреда для здоровья</strong><br>Научитесь высыпаться за <span class="highlight">6 часов</span> вместо 8 и чувствовать себя лучше</li>
+        <li><strong>Просыпаться без будильника в нужное время</strong><br>Ваше тело само научится просыпаться <strong>бодрым и отдохнувшим</strong></li>
+        <li><strong>Улучшите память и концентрацию</strong><br>Больше продуктивности на работе и в учёбе</li>
+        <li><strong>Избавитесь от хронической усталости</strong><br>Энергия перестанет заканчиваться к обеду</li>
+        <li><strong>Укрепите иммунитет</strong><br>Реже болеть = больше жить полноценной жизнью</li>
+    </ul>
+
+    <h2>Что внутри курса?</h2>
+
+    <div class="module">
+        <h3>📌 Модуль 1. Наука сна</h3>
+        <ul>
+            <li>Как устроены фазы сна и почему это важно?</li>
+            <li>Сколько нужно спать лично вам?</li>
+        </ul>
+    </div>
+
+    <div class="module">
+        <h3>📌 Модуль 2. Оптимизация режима</h3>
+        <ul>
+            <li>Как рассчитать идеальное время для засыпания и пробуждения?</li>
+            <li>Что делать, если работа в ночную смену?</li>
+        </ul>
+    </div>
+
+    <div class="module">
+        <h3>📌 Модуль 3. Быстрое засыпание</h3>
+        <ul>
+            <li>Техники релаксации</li>
+            <li>Как отключить «мысленную жвачку»?</li>
+        </ul>
+    </div>
+
+    <div class="module">
+        <h3>📌 Модуль 4. Качество сна</h3>
+        <ul>
+            <li>Идеальные условия в спальне</li>
+            <li>Как есть, пить и тренироваться, чтобы лучше спать?</li>
+        </ul>
+    </div>
+
+    <div class="module">
+        <h3>📌 Модуль 5. Восстановление при недосыпе</h3>
+        <ul>
+            <li>Что делать, если пришлось мало поспать?</li>
+            <li>Как взбодриться без кофеина?</li>
+        </ul>
+    </div>
+
+    <div class="guarantee">
+        <h3>🎁 Бонусы:</h3>
+        <ul>
+            <li>Чек-лист «Идеальный вечер перед сном»</li>
+            <li>Гайд «Как высыпаться в путешествиях и командировках»</li>
+            <li>Доступ к закрытому чату с экспертами</li>
+        </ul>
+    </div>
+
+    <h2>Кому подойдёт этот курс?</h2>
+
+    <p>✔ <strong>Студентам</strong> — чтобы учиться эффективнее и меньше уставать<br>
+    ✔ <strong>Офисным работникам</strong> — для борьбы с послеобеденной сонливостью<br>
+    ✔ <strong>Предпринимателям</strong> — больше энергии = больше достижений<br>
+    ✔ <strong>Спортсменам</strong> — ускоренное восстановление мышц<br>
+    ✔ <strong>Родителям</strong> — как высыпаться, даже если ребёнок будит ночью<br>
+    ✔ <strong>Всем, кто хочет улучшить здоровье и самочувствие</strong></p>
+
+    <h2>Что будет, если НЕ действовать?</h2>
+
+    <p>Если ничего не менять:<br>
+    - <strong>Усталость</strong> станет вашей нормой<br>
+    - <strong>Продуктивность</strong> продолжит падать<br>
+    - <strong>Стресс</strong> будет накапливаться<br>
+    - <strong>Здоровье</strong> ухудшится</p>
+
+    <p><em>Стоит ли рисковать?</em></p>
+
+    <h2>Почему стоит купить курс именно сейчас?</h2>
+
+    <p><span class="emoji">🔥</span> <strong>Ограниченное предложение!</strong><br>
+    Первые 100 участников получат <strong>персональную консультацию</strong> от эксперта по сну.</p>
+
+    <p><span class="emoji">💰</span> <strong>Гарантия возврата</strong><br>
+    Если в течение 14 дней курс вам не подойдёт — вернём деньги.</p>
+
+    <p><span class="emoji">⏳</span> <strong>Специальная цена</strong><br>
+    Сейчас курс доступен со <strong>скидкой 40%</strong> — успейте забрать!</p>
+
+    <h2>Как начать?</h2>
+
+    <ol>
+        <li>Нажмите кнопку <strong>«Записаться на курс»</strong></li>
+        <li>Получите доступ в личный кабинет</li>
+        <li>Уже сегодня начните применять первые техники</li>
+    </ol>
+
+    <p><strong>Ваш идеальный сон — ближе, чем кажется!</strong></p>
+
+    <div class="cta">
+        <span class="emoji">💤</span> Перестаньте мучиться от недосыпа — начните высыпаться и жить полной жизнью! <span class="emoji">💤</span>
+    </div>
+
+      <div style="text-align: center; margin: 40px 0;">
+        <button id="animatedButton" class="pulse-button">Записаться на курс</button>
+        <p style="margin-top: 10px; font-size: 14px; color: #777;">Осталось 12 мест по акции</p>
+ <p style="margin-top: 10px; font-size: 14px; color: #777;">Леушин С. Г. контакты:lsg21011972@gmail.com Telegram @leushin1972</p>
+    </div>
+  </div>
+
+  <div id="canvas-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+  <script>
+    // 1. Инициализация сцены с прозрачным фоном
+    const scene = new THREE.Scene();
+    scene.background = null;
+    
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ 
+      antialias: true,
+      alpha: true
+    });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+    // 2. Создаем 40 каркасных фигур увеличенного размера
+    const shapes = [];
+    const shapeCount = 40;
+    const baseSize = 3.5; // Увеличенный базовый размер
+    const worldBoundary = 35; // Увеличенная область движения
+
+    // Палитра цветов для каркасов
+    const colors = [
+      0xff4136, 0x0074d9, 0x2ecc40, 0xffdc00,
+      0xb10dc9, 0xff851b, 0x7fdbff, 0x01ff70
+    ];
+
+    for (let i = 0; i < shapeCount; i++) {
+      // Случайный выбор между кубом и тетраэдром
+      let geometry;
+      if (Math.random() > 0.3) {
+        geometry = new THREE.BoxGeometry(
+          baseSize * (0.7 + Math.random() * 0.7),
+          baseSize * (0.7 + Math.random() * 0.7),
+          baseSize * (0.7 + Math.random() * 0.7)
+        );
+      } else {
+        geometry = new THREE.TetrahedronGeometry(baseSize * (0.8 + Math.random() * 0.7));
+      }
+      
+      const material = new THREE.MeshBasicMaterial({
+        color: colors[Math.floor(Math.random() * colors.length)],
+        wireframe: true,
+        transparent: true,
+        opacity: 0.9
+      });
+      
+      const shape = new THREE.Mesh(geometry, material);
+      
+      // Позиция и поворот
+      shape.position.set(
+        (Math.random() - 0.5) * worldBoundary,
+        (Math.random() - 0.5) * worldBoundary,
+        (Math.random() - 0.5) * worldBoundary
+      );
+      
+      shape.rotation.set(
+        Math.random() * Math.PI * 2.111,
+        Math.random() * Math.PI * 2.14,
+        Math.random() * Math.PI * 2.123
+      );
+      
+      // Параметры движения
+      shape.userData = {
+        velocity: new THREE.Vector3(
+          (Math.random() - 0.5) * 0.0634,
+          (Math.random() - 0.5) * 0.0687,
+          (Math.random() - 0.5) * 0.0645
+        ),
+        rotationSpeed: new THREE.Vector3(
+          (Math.random() - 0.5) * 0.015,
+          (Math.random() - 0.5) * 0.015,
+          (Math.random() - 0.5) * 0.015
+        ),
+        sizeVariation: Math.random() * 0.3 + 0.85
+      };
+      
+      scene.add(shape);
+      shapes.push(shape);
+    }
+
+    // 3. Настройка камеры
+    camera.position.z = 45;
+    camera.position.y = 10;
+
+    // 4. Анимация с плавными движениями
+    function animate() {
+      requestAnimationFrame(animate);
+      
+      shapes.forEach(shape => {
+        // Движение с инерцией
+        shape.position.add(shape.userData.velocity);
+        
+        // Вращение
+        shape.rotation.x += shape.userData.rotationSpeed.x;
+        shape.rotation.y += shape.userData.rotationSpeed.y;
+        shape.rotation.z += shape.userData.rotationSpeed.z;
+        
+        // Отскок от границ с замедлением
+        const boundary = worldBoundary * 0.9;
+        if (Math.abs(shape.position.x) > boundary) {
+          shape.userData.velocity.x *= -0.9;
+          shape.position.x = Math.sign(shape.position.x) * boundary;
+        }
+        if (Math.abs(shape.position.y) > boundary) {
+          shape.userData.velocity.y *= -0.9;
+          shape.position.y = Math.sign(shape.position.y) * boundary;
+        }
+        if (Math.abs(shape.position.z) > boundary) {
+          shape.userData.velocity.z *= -0.9;
+          shape.position.z = Math.sign(shape.position.z) * boundary;
+        }
+        
+        // Пульсация размера
+        shape.scale.setScalar(
+          0.95 + Math.sin(Date.now() * 0.00253 * shape.userData.sizeVariation) * 0.1
+        );
+      });
+      
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // 5. Обработка ресайза
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
